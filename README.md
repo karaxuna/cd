@@ -1,2 +1,2 @@
 # cd
-Custom directives, filters and services for Angular 1.x
+Custom directives, filters and services for Angular 1.x **without external dependencies**
