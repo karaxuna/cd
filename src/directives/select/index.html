@@ -1,0 +1,53 @@
+<div class="cd-select" ng-class="expanded ? 'cd-expanded' : null" tabindex="0">
+    <fieldset class="cd-head" ng-disabled="disabled" ng-click="expanded = !expanded">
+        <!-- Multiple selection -->
+        <div ng-if="multiple" class="cd-selection cd-multiple">
+            <div ng-if="!selection.length" class="cd-placeholder">
+                <span ng-bind="placeholder"></span>
+            </div>
+            <div ng-repeat="item in selection" class="cd-tag">
+                <div>
+                    <span class="cd-caption" ng-bind="getCaption(item)"></span>
+                </div>
+                <div>
+                    <button class="cd-remove" ng-click="remove(item)" cd-stop-propagation>×</button>
+                </div>
+            </div>
+        </div>
+        <!-- Single selection -->
+        <div ng-if="!multiple" class="cd-selection cd-single">
+            <div class="cd-selected-text" ng-class="!selection ? 'cd-placeholder' : null">
+                <span ng-bind="selection ? getCaption(selection) : expanded ? null : placeholder"></span>
+            </div>
+        </div>
+        <div class="cd-buttons">
+            <table boder="0">
+                <tr>
+                    <td ng-if="!multiple && selection && !disabled">
+                        <button type="button" class="cd-button cd-button-clear btn-not-style" ng-click="clear();" cd-stop-propagation tabindex="-1">
+                            <span style="font: bold 16px Arial, sans-serif; line-height: 1.2;">✕</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="cd-button cd-button-collapse btn-not-style" tabindex="-1">
+                            <span>▾</span>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </fieldset>
+    <!-- Tether.js will move this part into body tag -->
+    <div class="cd-select-body" ng-class="expanded ? 'cd-expanded' : null">
+        <div ng-if="expanded" class="cd-select-dropdown">
+            <div class="cd-search" ng-class="$parent.searching ? 'cd-searching' : null;" ng-if="options.allowSearch !== false;">
+                <input type="text" class="cd-search-input" ng-model="options.search" ng-model-options="{ debounce: 500 }" cd-focus-when="expanded" />
+            </div>
+            <ul class="cd-records scroll vertical hard" ng-if="options.records.length" cd-on-bottom-scroll="onBottomScroll()" cd-on-bottom-scroll-distance="100">
+                <li tabindex="0" class="cd-record" ng-repeat="record in options.records" ng-click="select(record)">
+                    <span ng-bind-html="getOptionCaption(record)"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
