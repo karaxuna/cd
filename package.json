@@ -12,7 +12,7 @@
         "watch": "./node_modules/.bin/gulp watch"
     },
     "devDependencies": {
-        "gulp": "^3.9.1",
+        "gulp": "3.9.1",
         "gulp-angular-templatecache": "1.8.0",
         "gulp-concat": "2.6.0",
         "gulp-sass": "2.2.0",
