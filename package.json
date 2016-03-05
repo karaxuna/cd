@@ -3,19 +3,16 @@
     "description": "Custom directives, filters and services for Angular 1.x without external dependencies",
     "version": "0.0.1",
     "author": "Kakhaber Bazerashvili",
-    "dependencies": {
-        "express": "4.9.7"
-    },
-    "scripts": {
-        "start": "node index.js",
-        "build": "./node_modules/.bin/gulp build",
-        "watch": "./node_modules/.bin/gulp watch"
-    },
     "devDependencies": {
         "gulp": "3.9.1",
         "gulp-angular-templatecache": "1.8.0",
         "gulp-concat": "2.6.0",
         "gulp-sass": "2.2.0",
         "merge-stream": "1.0.0"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "build": "./node_modules/.bin/gulp build",
+        "watch": "./node_modules/.bin/gulp watch"
     }
 }

@@ -1,13 +1,22 @@
 /* global angular */
-var app = angular.module('docs', ['ui.router', 'cd']);
+var app = angular.module('docs', ['cd']);
 
-// define states
-app.config(['$stateProvider', function (stateProvider) {
-    stateProvider.state('app', {
-        url: '',
-        templateUrl: './app/index.html',
-        controller: 'appCtrl'
-    });
+// ctrl
+angular.module('docs').controller('example1Ctrl', ['$scope', function (scope) {
+    scope.options = {
+        reload: function () {
+            return {
+                total: 2,
+                records: [{
+                    caption: 'one',
+                    value: 1
+                }, {
+                    caption: 'two',
+                    value: 2
+                }]
+            };
+        }
+    }
 }]);
 
 // bootstrap angular

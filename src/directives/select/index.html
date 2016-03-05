@@ -10,7 +10,7 @@
                     <span class="cd-caption" ng-bind="getCaption(item)"></span>
                 </div>
                 <div>
-                    <button class="cd-remove" ng-click="remove(item)" cd-stop-propagation>×</button>
+                    <button class="cd-remove" ng-click="remove(item)" cd-stop-propagation>x</button>
                 </div>
             </div>
         </div>
@@ -25,12 +25,12 @@
                 <tr>
                     <td ng-if="!multiple && selection && !disabled">
                         <button type="button" class="cd-button cd-button-clear btn-not-style" ng-click="clear();" cd-stop-propagation tabindex="-1">
-                            <span style="font: bold 16px Arial, sans-serif; line-height: 1.2;">✕</span>
+                            <span>x</span>
                         </button>
                     </td>
                     <td>
                         <button type="button" class="cd-button cd-button-collapse btn-not-style" tabindex="-1">
-                            <span>▾</span>
+                            <span>v</span>
                         </button>
                     </td>
                 </tr>
